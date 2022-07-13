@@ -11,7 +11,7 @@ from PyQt5.QtGui import QIcon
 import pandas as pd
 import numpy as np
 from ttide import t_tide, t_utils
-from ttide.time import datetime
+from ttide.time import date2num
 from utide import solve, reconstruct
 import matplotlib.pyplot as plt
 from pandas.plotting import register_matplotlib_converters
