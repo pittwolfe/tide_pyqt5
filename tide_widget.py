@@ -425,8 +425,11 @@ class TideWidget(QWidget):
                 nan_add = nan_add.iloc[:, 1:]
                 data_dummy.append(nan_add)
 
-        data_add = pd.concat(data_dummy, sort=True)
-        filled = pd.concat([data, data_add], sort=True)
+        if len(data_dummy) > 0:
+            data_add = pd.concat(data_dummy, sort=True)
+            filled = pd.concat([data, data_add], sort=True)
+        else:
+            filled = data.copy()
         filled = filled.sort_index()
         time_array2 = filled.index
         depth_array2 = filled[depth].values
